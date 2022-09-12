@@ -1,37 +1,43 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { routes } from './reducers/routes';
+import Header from './components/Header';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  useEffect(() => {
-    axios.get("https://localhost:7252/api/BusDetails/string2string")
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      })
+  // useEffect(() => {
+  //   axios.get("https://localhost:7252/api/BusDetails/string2string")
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     })
 
-  }, []);
+  // }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        AgriECom
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */} 
-      </header>
+      <BrowserRouter>
+        <header>
+          <Header/>
+        </header>
+        <Routes>
+          {routes.map((item, index) => {
+            return (<Route
+              key={index}
+              path={item.path}
+              element={item.element}
+              exact
+            >
+            </Route>);
+          })
+          }
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -15,3 +15,9 @@ code {
 body{
   background: white;
 }
+
+
+Link{
+  color: white;
+  text-decoration: none;
+}
