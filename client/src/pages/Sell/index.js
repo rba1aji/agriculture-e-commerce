@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
 
@@ -12,6 +13,13 @@ const Sell = () => {
         <h2>Sell your product</h2>
         <form onSubmit={(e) => {
             e.preventDefault();
+            axios.post ("http://localhost:5000/product", {
+                name,
+                quantity,
+                price,
+                category,
+                description,
+            });
         }}>
             <div className="form-group">
                 <label htmlFor="name">Product Name</label>

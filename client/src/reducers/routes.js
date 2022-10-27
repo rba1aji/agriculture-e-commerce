@@ -2,6 +2,7 @@ import Home from '../pages/Home/index';
 import Sell from '../pages/Sell';
 import React from 'react';
 import Cart from '../pages/Cart';
+import Llogin from '../pages/Login';
 
 export const routes = [
     {
@@ -37,7 +38,7 @@ export const routes = [
     {
         header: true,
         title: "Login",
-        element: <Sell />,
+        element: <Llogin />,
         path: "/login"
     }
 ]

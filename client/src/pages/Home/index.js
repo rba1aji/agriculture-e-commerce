@@ -86,6 +86,7 @@ export default function Home() {
                                 <p className="card-text">{product.category}</p>
                                 <Button  className="card-link" onClick={() => {
                                     setCart([...cart, product]);
+                                    alert("Product added to cart");
                                 }}>Add to cart</Button>
                                <Button href="#" className="card-link">View details</Button>
                             </div>
