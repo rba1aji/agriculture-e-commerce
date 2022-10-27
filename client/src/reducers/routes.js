@@ -1,6 +1,7 @@
 import Home from '../pages/Home/index';
 import Sell from '../pages/Sell';
 import React from 'react';
+import Cart from '../pages/Cart';
 
 export const routes = [
     {
@@ -30,7 +31,7 @@ export const routes = [
     {
         header: true,
         title: "My Cart",
-        element: <Home />,
+        element: <Cart />,
         path: "/cart"
     },
     {

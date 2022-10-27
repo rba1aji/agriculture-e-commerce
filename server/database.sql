@@ -12,7 +12,7 @@ CREATE TABLE sellers(
 
 CREATE TABLE products(
     product_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(100),
     price FLOAT ,
     image VARCHAR(100) ,
     description VARCHAR(1000) ,
@@ -28,3 +28,8 @@ CREATE TABLE buyers(
     email VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL
 );
+
+CREATE TABLE today_offers{
+    product_id INT,
+    price FLOAT
+}
