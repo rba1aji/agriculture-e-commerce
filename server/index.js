@@ -11,15 +11,15 @@ app.use(express.json());
 // create a product
 app.post("/products", async (req, res) => {
     try {
-        const { name, price, category, description, quantity } = req.body;
+        const {name, price, description, category, quantity} = req.body;
         const newProduct = await pool.query(
             "INSERT INTO products (name, price, description, category, quantity) VALUES($1, $2, $3, $4, $5) RETURNING *",
             [name, price, description, category, quantity]
         );
         res.json(newProduct.rows[0]);
     } catch (err) {
-        console.error(err.message)
-        }
+        console.error(err.message);
+    }
 });
 
 // get all products
@@ -28,7 +28,7 @@ app.get("/product", async (req, res) => {
         const allProducts = await pool.query("SELECT * FROM products");
         res.json(allProducts.rows);
     } catch (err) {
-        console.error(err.message);
+        console.log(err.message);
     }
 });
 

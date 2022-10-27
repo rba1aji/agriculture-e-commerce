@@ -13,11 +13,11 @@ CREATE TABLE sellers(
 CREATE TABLE products(
     product_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    price FLOAT NOT NULL,
+    price FLOAT ,
     image VARCHAR(100) ,
-    description VARCHAR(1000) NOT NULL,
-    category VARCHAR(100) NOT NULL,
-    quantity INT NOT NULL,
+    description VARCHAR(1000) ,
+    category VARCHAR(100) ,
+    quantity INT ,
     seller_id INT,
     FOREIGN KEY (seller_id) REFERENCES sellers(seller_id)   
 );
