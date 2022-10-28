@@ -13,12 +13,8 @@ const Sell = () => {
         <h2>Sell your product</h2>
         <form onSubmit={(e) => {
             e.preventDefault();
-            axios.post ("http://localhost:5000/product", {
-                name,
-                quantity,
-                price,
-                category,
-                description,
+            axios.post("http://localhost:5000/product", {
+                name, price, description, category, quantity
             });
         }}>
             <div className="form-group">
