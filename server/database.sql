@@ -1,7 +1,7 @@
 CREATE DATABASE agriecom;
 
 CREATE TABLE cart (
-    product_id INT NOT NULL,
+    product_id INT NOT NULL
 );
 
 CREATE TABLE products(
@@ -12,5 +12,5 @@ CREATE TABLE products(
     category VARCHAR(100) ,
     quantity INT ,
     seller_id INT,
-    image VARCHAR(100) ,
+    image VARCHAR(100) 
 );
