@@ -17,7 +17,11 @@ const Sell = () => {
             console.log(name, quantity, price, category, description);
             axios.post("http://localhost:5000/products", {
                 name, price, description, category, quantity
-            });
+            })
+                .then((res) => {
+                    console.log(res);
+                    alert("Product listed for selling");
+                })
         }}>
             <div className="form-group">
                 <label htmlFor="name">Product Name</label>

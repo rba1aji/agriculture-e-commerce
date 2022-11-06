@@ -5,26 +5,16 @@ import axios from 'axios';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { routes } from './reducers/routes';
 import Header from './components/Header';
+import ProductPage from './pages/ProductPage';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  useEffect(() => {
-    axios.get("https://localhost:7252/api/BusDetails/string2string")
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      })
-
-  }, []);
-  
   return (
     <div className="App">
       <BrowserRouter>
         <header>
-          <Header/>
+          <Header />
         </header>
         <Routes>
           {routes.map((item, index) => {
@@ -37,6 +27,11 @@ function App() {
             </Route>);
           })
           }
+          <Route
+            path="/product/:id"
+            exact element={<ProductPage />}
+          >
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

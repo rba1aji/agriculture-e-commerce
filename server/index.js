@@ -41,6 +41,20 @@ app.get("/products/:id", async (req, res) => {
     }
 });
 
+//add to cart
+app.post("/cart", async (req, res) => {
+    try {
+        const { product_id } = req.body;
+        const newCart = await pool.query(
+            "INSERT INTO cart (product_id) VALUES($1) RETURNING *",
+            [product_id]
+        );
+        res.json(newCart.rows[0]);
+        console.log(req.body);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
 
 
 
