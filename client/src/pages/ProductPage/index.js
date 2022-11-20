@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import bg4 from '../../images/bg4.jpg';
+import { prodImgUrl } from "../../reducers/ApiUrl";
 
 export default function ProductPage() {
     const id = useParams().id;
@@ -24,16 +25,18 @@ export default function ProductPage() {
             backgroundSize: "cover",
             backgroundPosition: "fixed",
             minHeight: "100vh",
-            color:'white'
+            color: 'white'
         }}
             className="pt-5"
         >
             <h1></h1>
-            <div className="py-4 mb-4 ">
+            <div className="py-4  ">
                 <div className="container ">
                     <div className="row">
                         <div className="col-md-6">
-                            <img src={prod.image} alt={prod.name} className="img-fluid" />
+                            <img src={prodImgUrl()} alt={prod.name}
+                                style={{height:'90vh', objectFit:'cover'}}
+                            className="img-fluid" />
                         </div>
                         <div className="col-md-6">
                             <h2>{prod.name}</h2>
