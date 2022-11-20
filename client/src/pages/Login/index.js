@@ -33,7 +33,7 @@ export default function Llogin() {
     return <div className='mt-4 pt-4'>
         <h2 className="mt-4 pt-4"
             style={{
-                textShadow: "2px 2px 2px green",
+                textShadow: "2px 2px 2px white",
                 fontWeight: "bolder",
             }}
         >Login / Create Account</h2>

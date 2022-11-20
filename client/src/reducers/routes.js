@@ -3,7 +3,7 @@ import Sell from '../pages/Sell';
 import React from 'react';
 import Cart from '../pages/Cart';
 import Login from '../pages/Login';
-
+import Categories from '../pages/Categories';
 export const routes = [
     {
         header: false,
@@ -20,7 +20,7 @@ export const routes = [
     {
         header: true,
         title: "Categories",
-        element: <Home />,
+        element: <Categories />,
         path: "/categories"
     },
     {
