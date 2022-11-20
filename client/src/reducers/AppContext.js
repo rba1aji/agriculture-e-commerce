@@ -20,6 +20,7 @@ export default function AppProvider({ children }) {
                 setLoading,
                 error,
                 setError,
+                user, setUser
             }}
         >
             {children}
