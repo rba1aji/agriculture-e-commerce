@@ -45,11 +45,15 @@ export default function Home() {
                                 <h6 className="card-subtitle mb-2 text-muted">Price: Rs.{product.price}</h6>
                                 <p className="card-text">category:{product.category}</p>
                                 <p className="card-text">{product.description}</p>
-                                <Button className="card-link" onClick={() => {
-                                    setCart([...cart, product]);
-                                    alert("Product added to cart");
-                                }}>Add to cart</Button>
-                                <Button as={Link} to={`/product/${product.product_id}`} className="card-link">View details</Button>
+                                <Button className="card-link"
+                                    variant='info'
+                                    onClick={() => {
+                                        setCart([...cart, product]);
+                                        alert("Product added to cart");
+                                    }}>Add to cart</Button>
+                                <Button as={Link} to={`/product/${product.product_id}`}
+                                    variant='warning'
+                                    className="card-link">View details</Button>
                             </div>
                         </div>
                     </div>
