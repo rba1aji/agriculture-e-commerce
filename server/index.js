@@ -11,10 +11,10 @@ app.use(express.json());
 // create a product
 app.post("/products", async (req, res) => {
     try {
-        const { name, price, description, category, quantity } = req.body;
+        const { name, price, description, category, quantity, image } = req.body;
         const newProduct = await pool.query(
-            "INSERT INTO products (name, price, description, category, quantity) VALUES($1, $2, $3, $4, $5) RETURNING *",
-            [name, price, description, category, quantity]
+            "INSERT INTO products (name, price, description, category, quantity,image) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
+            [name, price, description, category, quantity, image]
         );
         res.json(newProduct.rows[0]);
         console.log(req.body);
