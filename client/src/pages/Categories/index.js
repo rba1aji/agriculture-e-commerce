@@ -3,6 +3,7 @@ import { ctgry, prodImgUrl } from "../../reducers/ApiUrl";
 export default function Categories() {
     return <div style={{ width: '100vw' }}>
         <h1>Categories</h1>
+        <p className='text-center'>Below are the categories of products you can buy and sell through AgriECom</p>
         <br />
 
         <div className="container d-flex" style={{ width: '100vw' }}>
