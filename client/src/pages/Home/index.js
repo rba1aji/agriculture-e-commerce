@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { ApiUrl } from "../../reducers/ApiUrl";
 import { useAppContext } from "../../reducers/AppContext";
 import { Link } from 'react-router-dom';
+import poster1 from '../../images/poster1.jpg';
 
 export default function Home() {
 
@@ -25,8 +26,23 @@ export default function Home() {
 
     return (
         <div className="px-5 ">
+            <table style={{width:'100vw', height:'70vh'}}>
+                <tbody>
+                    <tr style={{width:'50%'}} className='pe-5 me-4'>
+                        <td><img src={poster1} style={{width:'75%'}} />
+                    </td><td style={{width:'50%'}} className='h1 pe-5 me-5'>
+                        You are smart if you sell your agriculture products here
+                        <br/>Get the best price for it.
+                        </td></tr>
+                </tbody>     </table>
+                <Button variant='info' className='mx-5 px-5 h2 text-white'> <a href='#products'><h2>Get Started</h2></a></Button>
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h2 className="text-center pt-3 mt-1"
-
+    id='products'
                 style={{
                     color: '#0d6efd',
                     textShadow: "2px 2px 2px #fff",

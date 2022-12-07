@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Cart() {
     const { cart, setCart } = useAppContext();
     return (
-        <div className='mx-5 mt-5'>
+        <div className='mx-5 mt-3'>
             <h1>Cart</h1>
             <br />
             {
@@ -47,6 +47,15 @@ export default function Cart() {
                         </table>
                     </Card>
                 ))}
+            </div>
+            <div>
+                {/* total cost */}
+                <h2 className='text-center fw-bolder color-white'>Total Cost: 
+                <br/>
+                Rs. {cart.reduce((acc, item) => acc + item.price, 0)}</h2>
+                <br />
+                <br />
+                <br />
             </div>
         </div>
     );
